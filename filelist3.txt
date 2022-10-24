@@ -1,0 +1,10 @@
+Aslan
+Echo.txt
+filelist3.txt
+filelist.txt
+Files
+myarchive.tar
+myarchive.tar.gz
+test.sh
+unpack1
+Aslan

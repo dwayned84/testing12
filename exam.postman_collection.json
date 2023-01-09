@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "0ebc0eee-70a8-4c3c-b4c2-516785e2b4f9",
+		"name": "exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24884736"
+	},
+	"item": [
+		{
+			"name": "New Folder Exam",
+			"item": [
+				{
+					"name": "https://wger.de/api/v2/exercise",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"var jsonObject = xml2Json(responseBody);",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.count).to.eql(432);",
+									"});",
+									"pm.test(\"Body matches license\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"license\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wger.de/api/v2/exercise",
+							"protocol": "https",
+							"host": [
+								"wger",
+								"de"
+							],
+							"path": [
+								"api",
+								"v2",
+								"exercise"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "https://wger.de/api/v2/exercise",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://wger.de/api/v2/exercise",
+									"protocol": "https",
+									"host": [
+										"wger",
+										"de"
+									],
+									"path": [
+										"api",
+										"v2",
+										"exercise"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 09 Jan 2023 13:16:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "10967"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept,Accept-Language,Origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 09 Jan 2023 13:47:26 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=10000"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 432,\n    \"next\": \"https://wger.de/api/v2/exercise/?limit=20&offset=20\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 345,\n            \"uuid\": \"c788d643-150a-4ac7-97ef-84643c6419bf\",\n            \"name\": \"2 Handed Kettlebell Swing\",\n            \"exercise_base\": 9,\n            \"description\": \"<p>Two Handed Russian Style Kettlebell swing</p>\",\n            \"creation_date\": \"2015-08-03\",\n            \"category\": 10,\n            \"muscles\": [],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                10\n            ],\n            \"language\": 2,\n            \"license\": 2,\n            \"license_author\": \"deusinvictus\",\n            \"variations\": [\n                345,\n                249\n            ],\n            \"author_history\": [\n                \"deusinvictus\"\n            ]\n        },\n        {\n            \"id\": 1061,\n            \"uuid\": \"60d8018d-296f-4c62-a80b-f609a25d34ea\",\n            \"name\": \"Abdominal Stabilization\",\n            \"exercise_base\": 56,\n            \"description\": \"\",\n            \"creation_date\": \"2022-10-11\",\n            \"category\": 10,\n            \"muscles\": [\n                6\n            ],\n            \"muscles_secondary\": [\n                14\n            ],\n            \"equipment\": [\n                4\n            ],\n            \"language\": 2,\n            \"license\": 2,\n            \"license_author\": \"wger.de\",\n            \"variations\": [],\n            \"author_history\": [\n                \"wger.de\"\n            ]\n        },\n        {\n            \"id\": 174,\n            \"uuid\": \"99881bdd-43d7-4c3b-82ed-9c187d0455b7\",\n            \"name\": \"Abduktoren-Maschine\",\n            \"exercise_base\": 12,\n            \"description\": \"<ul>\\n<li>in eine aufrechte Position setzen, bei der die Beine hüftbreit geöffnet sind</li>\\n<li>den Rücken, die Knie und die Oberschenkelaußenseite an die jeweiligen Polster pressen</li>\\n<li>mit den Händen an den Griffen festhalten</li>\\n<li>die Oberschenkel bis zum Anschlagpunkt der Hebelarme auseinander drücken</li>\\n<li>danach die Beine wieder zusammen führen</li>\\n<li>das Gesäß nicht vom Sitz abheben</li>\\n<li>beim Auseinanderdrücken der Hebelarme aus- und beim Zusammenführen einatmen</li>\\n</ul>\",\n            \"creation_date\": \"2013-07-19\",\n            \"category\": 9,\n            \"muscles\": [\n                8\n            ],\n            \"muscles_secondary\": [],\n            \"equipment\": [],\n            \"language\": 1,\n            \"license\": 1,\n            \"license_author\": \"flori\",\n            \"variations\": [],\n            \"author_history\": [\n                \"flori\"\n            ]\n        },\n        {\n            \"id\": 1178,\n            \"uuid\": \"28bf0f7b-ceba-47a6-8807-3cbd3312c82f\",\n            \"name\": \"Alzate Laterali\",\n            \"exercise_base\": 348,\n            \"description\": \"Alzate LateraliAlzate Laterali\",\n            \"creation_date\": \"2022-12-30\",\n            \"category\": 13,\n            \"muscles\": [\n                2\n            ],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                3\n            ],\n            \"language\": 13,\n            \"license\": 2,\n            \"license_author\": \"rlamarca\",\n            \"variations\": [\n                1180,\n                1183,\n                1178\n            ],\n            \"author_history\": [\n                \"rlamarca\"\n            ]\n        },\n        {\n            \"id\": 228,\n            \"uuid\": \"880bff63-6798-4ffc-a818-b2a1ccfec0f7\",\n            \"name\": \"Arnold Press\",\n            \"exercise_base\": 20,\n            \"description\": \"<p>Zwei Kurzhanteln mit den Handflächen nach innen vor der Brust halten, Ellbogen unterhalb der Handgelenke.</p>\\n<p>Ellbogen nach außen bringen und Hanteln über den Kopf heben. Drehung kommt aus dem Ellbogen, nicht aus den Armen!</p>\\n<p>Wenn die Arme durchgestreckt sind, die gleiche Bewegung rückwärts ausführen.</p>\",\n            \"creation_date\": \"2014-03-09\",\n            \"category\": 13,\n            \"muscles\": [],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                3\n            ],\n            \"language\": 1,\n            \"license\": 3,\n            \"license_author\": \"bloody_disgrace\",\n            \"variations\": [\n                228,\n                53,\n                66,\n                241,\n                266\n            ],\n            \"author_history\": [\n                \"bloody_disgrace\"\n            ]\n        },\n        {\n            \"id\": 227,\n            \"uuid\": \"53ca25b3-61d9-4f72-bfdb-492b83484ff5\",\n            \"name\": \"Arnold Shoulder Press\",\n            \"exercise_base\": 20,\n            \"description\": \"<p>Very common shoulder exercise.</p>\\n<p> </p>\\n<p>As shown here: https://www.youtube.com/watch?v=vj2w851ZHRM</p>\",\n            \"creation_date\": \"2014-03-09\",\n            \"category\": 13,\n            \"muscles\": [],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                3\n            ],\n            \"language\": 2,\n            \"license\": 1,\n            \"license_author\": \"trzr23\",\n            \"variations\": [\n                227,\n                329,\n                256,\n                190,\n                152,\n                155,\n                123,\n                119\n            ],\n            \"author_history\": [\n                \"trzr23\"\n            ]\n        },\n        {\n            \"id\": 5,\n            \"uuid\": \"5675ae61-6597-4806-ae5c-2dda5a5ac03c\",\n            \"name\": \"Ausfallschritte im Gehen\",\n            \"exercise_base\": 206,\n            \"description\": \"<p>.</p>\",\n            \"creation_date\": \"2013-05-05\",\n            \"category\": 9,\n            \"muscles\": [\n                10\n            ],\n            \"muscles_secondary\": [\n                8\n            ],\n            \"equipment\": [\n                3\n            ],\n            \"language\": 1,\n            \"license\": 2,\n            \"license_author\": \"wger.de\",\n            \"variations\": [\n                55,\n                5\n            ],\n            \"author_history\": [\n                \"wger.de\"\n            ]\n        },\n        {\n            \"id\": 55,\n            \"uuid\": \"27301836-ed7f-4510-83e7-66c0b8041a44\",\n            \"name\": \"Ausfallschritte Stehend\",\n            \"exercise_base\": 205,\n            \"description\": \"<p>.</p>\",\n            \"creation_date\": \"2013-05-05\",\n            \"category\": 9,\n            \"muscles\": [\n                10\n            ],\n            \"muscles_secondary\": [\n                8\n            ],\n            \"equipment\": [\n                3\n            ],\n            \"language\": 1,\n            \"license\": 2,\n            \"license_author\": \"wger.de\",\n            \"variations\": [\n                55,\n                5\n            ],\n            \"author_history\": [\n                \"wger.de\"\n            ]\n        },\n        {\n            \"id\": 677,\n            \"uuid\": \"8e9d8968-323d-468c-9174-8cf11a105fad\",\n            \"name\": \"Axe Hold\",\n            \"exercise_base\": 31,\n            \"description\": \"<p>Nehmen Sie die Hanteln und strecken Sie die Arme zur Seite. Halten Sie sie so lange wie möglich.</p>\",\n            \"creation_date\": \"2020-01-16\",\n            \"category\": 8,\n            \"muscles\": [],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                3\n            ],\n            \"language\": 1,\n            \"license\": 2,\n            \"license_author\": \"Wunschcoach\",\n            \"variations\": [],\n            \"author_history\": [\n                \"Wunschcoach\"\n            ]\n        },\n        {\n            \"id\": 289,\n            \"uuid\": \"6add5973-86d0-4543-928a-6bb8b3f34efc\",\n            \"name\": \"Axe Hold\",\n            \"exercise_base\": 31,\n            \"description\": \"<p>Grab dumbbells and extend arms to side and hold as long as you can</p>\",\n            \"creation_date\": \"2014-11-02\",\n            \"category\": 8,\n            \"muscles\": [],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                3\n            ],\n            \"language\": 2,\n            \"license\": 1,\n            \"license_author\": \"GrosseHund\",\n            \"variations\": [],\n            \"author_history\": [\n                \"GrosseHund\"\n            ]\n        },\n        {\n            \"id\": 1051,\n            \"uuid\": \"52a4cc0b-6d56-479d-b3b3-4a6a390cc379\",\n            \"name\": \"Ball crunches\",\n            \"exercise_base\": 165,\n            \"description\": \"\",\n            \"creation_date\": \"2022-10-11\",\n            \"category\": 10,\n            \"muscles\": [],\n            \"muscles_secondary\": [],\n            \"equipment\": [],\n            \"language\": 2,\n            \"license\": 2,\n            \"license_author\": \"\",\n            \"variations\": [\n                92,\n                1051,\n                94,\n                1052,\n                91,\n                416,\n                93,\n                170,\n                95,\n                176\n            ],\n            \"author_history\": [\n                \"\"\n            ]\n        },\n        {\n            \"id\": 38,\n            \"uuid\": \"4def60e7-ed8d-4a9d-bf76-ceb15ecf9779\",\n            \"name\": \"Bankdrücken Eng\",\n            \"exercise_base\": 76,\n            \"description\": \"<p>Lege dich auf die Bank, die Stange direkt über die Augen, die Knie etwas angewinkelt und die Füße fest auf dem Boden. Greife nun die Stange mit einem engen Griff (nicht mehr als 20cm.). Führe nun das Gewicht so weit nach unten, bis die Oberarme paralell zum Boden sind, gehe dann wieder nach obern. Bringe die Stange nicht wie beim (breiten) Bankdrücken auf Brusthöhe runter, sondern weiter unten. Auf der tiefsten Stelle sollten deine Arme einen rechten Winkel machen.</p>\",\n            \"creation_date\": \"2013-05-05\",\n            \"category\": 8,\n            \"muscles\": [\n                5\n            ],\n            \"muscles_secondary\": [\n                2,\n                4\n            ],\n            \"equipment\": [\n                1,\n                8\n            ],\n            \"language\": 1,\n            \"license\": 2,\n            \"license_author\": \"wger.de\",\n            \"variations\": [\n                77,\n                15,\n                38,\n                17,\n                720,\n                725,\n                41,\n                16,\n                61\n            ],\n            \"author_history\": [\n                \"wger.de\"\n            ]\n        },\n        {\n            \"id\": 77,\n            \"uuid\": \"06450bcb-03a8-4bd7-8349-ef677ee57ea3\",\n            \"name\": \"Bankdrücken KH\",\n            \"exercise_base\": 75,\n            \"description\": \"<p>Der Bewegungsablauf ist ähnlich zur Übung mit einer Langhantel.</p>\\n<p>Nehme die Gewichte in die Hände und lege dich auf die Bank. Halte die Hanteln neben der Brust auf Brustwarzenhöhe und drücke sie nun nach oben, bis die Arme ausgestreckt sind. Lasse die Gewichte nun langsam und kontrolliert runter.</p>\\n<p> </p>\",\n            \"creation_date\": \"2013-05-05\",\n            \"category\": 11,\n            \"muscles\": [\n                4\n            ],\n            \"muscles_secondary\": [\n                2,\n                5\n            ],\n            \"equipment\": [\n                8,\n                3\n            ],\n            \"language\": 1,\n            \"license\": 2,\n            \"license_author\": \"wger.de\",\n            \"variations\": [\n                77,\n                15,\n                38,\n                17,\n                720,\n                725,\n                41,\n                16,\n                61\n            ],\n            \"author_history\": [\n                \"wger.de\"\n            ]\n        },\n        {\n            \"id\": 15,\n            \"uuid\": \"198dcb2e-e35f-4b69-ae8b-e1124d438eae\",\n            \"name\": \"Bankdrücken LH\",\n            \"exercise_base\": 73,\n            \"description\": \"<p>Lege dich auf die Bank, die Stange direkt über die Augen, die Knie etwas angewinkelt und die Füße fest auf dem Boden. Greife die Stange breit und lasse sie langsam und kontrolliert runter, dabei sollte die Stange kurz auf Brustwarzenhöhe den Körper berühren. Dann das Gewicht wieder hochdrücken bis die Arme durchgestreckt sind.</p>\\n<p>Bei hohem Gewicht, empfielt sich natürlich einen <em>Spotter</em> zu haben, der einen hilft falls man die Stange nicht alleine hochdrücken kann.</p>\\n<p>Mit der Breite des Griffs kann außerdem kontrolliert werden, welcher Bereich der Brust stärker belastet wird:</p>\\n<ul>\\n<li>breiter Griff: äußere Brustmuskeln</li>\\n<li>enger Griff: innere Brustmuskeln und Trizeps</li>\\n</ul>\",\n            \"creation_date\": \"2013-05-05\",\n            \"category\": 11,\n            \"muscles\": [\n                4\n            ],\n            \"muscles_secondary\": [\n                2,\n                5\n            ],\n            \"equipment\": [\n                1,\n                8\n            ],\n            \"language\": 1,\n            \"license\": 2,\n            \"license_author\": \"wger.de\",\n            \"variations\": [\n                77,\n                15,\n                38,\n                17,\n                720,\n                725,\n                41,\n                16,\n                61\n            ],\n            \"author_history\": [\n                \"wger.de\"\n            ]\n        },\n        {\n            \"id\": 343,\n            \"uuid\": \"1b9dc5bc-790b-4e21-a55d-f8b3115e94c5\",\n            \"name\": \"Barbell Ab Rollout\",\n            \"exercise_base\": 41,\n            \"description\": \"<p>Place a barbell on the floor at your feet.</p>\\n<p>Bending at the waist, grip the barbell with a shoulder with overhand grip.</p>\\n<p>With a slow controlled motion, roll the bar out so that your back is straight.</p>\\n<p>Roll back up raising your hips and butt as you return to the starting position.</p>\",\n            \"creation_date\": \"2015-07-27\",\n            \"category\": 10,\n            \"muscles\": [\n                14\n            ],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                1\n            ],\n            \"language\": 2,\n            \"license\": 2,\n            \"license_author\": \"sevae\",\n            \"variations\": [],\n            \"author_history\": [\n                \"sevae\"\n            ]\n        },\n        {\n            \"id\": 407,\n            \"uuid\": \"1215dad0-b7e0-42c6-80d4-112f69acb68a\",\n            \"name\": \"Barbell Hack Squats\",\n            \"exercise_base\": 43,\n            \"description\": \"<p>Perform leg squats with barbell behind your legs</p>\",\n            \"creation_date\": \"2016-07-30\",\n            \"category\": 9,\n            \"muscles\": [],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                1\n            ],\n            \"language\": 2,\n            \"license\": 2,\n            \"license_author\": \"BePieToday\",\n            \"variations\": [\n                407,\n                342,\n                300,\n                650,\n                191,\n                389,\n                355,\n                160,\n                570,\n                795,\n                185,\n                111,\n                387\n            ],\n            \"author_history\": [\n                \"BePieToday\"\n            ]\n        },\n        {\n            \"id\": 1156,\n            \"uuid\": \"ce0f992e-f639-4489-ba51-80ee27720134\",\n            \"name\": \"Barbell Hip Thrust\",\n            \"exercise_base\": 901,\n            \"description\": \"Sit on the ground with a bench behind you, bending your knees so your feet are planted on the ground and holding a barbell resting below your hips. If you have a padded bar, or anything you can slip in between the bar and your body, it will go a long way to making the exercise more comfortable.\",\n            \"creation_date\": \"2022-12-22\",\n            \"category\": 9,\n            \"muscles\": [\n                8\n            ],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                1\n            ],\n            \"language\": 2,\n            \"license\": 2,\n            \"license_author\": \"enros7500\",\n            \"variations\": [],\n            \"author_history\": [\n                \"enros7500\"\n            ]\n        },\n        {\n            \"id\": 1162,\n            \"uuid\": \"952d450f-e7cc-4f09-ada0-ddea1a47b492\",\n            \"name\": \"Barbell Hip Thrust\",\n            \"exercise_base\": 294,\n            \"description\": \"Siéntate en el suelo con un banco detrás de ti, dobla las rodillas para que tus pies estén plantados en el suelo y sujeta una barra que descanse debajo de tus caderas. Si tienes una barra acolchada o algo que puedas colocar entre la barra y tu cuerpo, te resultará más cómodo.\",\n            \"creation_date\": \"2022-12-22\",\n            \"category\": 9,\n            \"muscles\": [\n                8\n            ],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                1,\n                8\n            ],\n            \"language\": 4,\n            \"license\": 2,\n            \"license_author\": \"enros7500\",\n            \"variations\": [],\n            \"author_history\": [\n                \"enros7500\"\n            ]\n        },\n        {\n            \"id\": 1157,\n            \"uuid\": \"1af6b273-eb97-4712-a0c6-fe9a1dfe97f4\",\n            \"name\": \"Barbell Hip Thrust\",\n            \"exercise_base\": 902,\n            \"description\": \"Sit on the ground with a bench behind you, bending your knees so your feet are planted on the ground and holding a barbell resting below your hips. If you have a padded bar, or anything you can slip in between the bar and your body, it will go a long way to making the exercise more comfortable.\",\n            \"creation_date\": \"2022-12-22\",\n            \"category\": 9,\n            \"muscles\": [\n                8\n            ],\n            \"muscles_secondary\": [],\n            \"equipment\": [\n                1\n            ],\n            \"language\": 2,\n            \"license\": 2,\n            \"license_author\": \"enros7500\",\n            \"variations\": [],\n            \"author_history\": [\n                \"enros7500\"\n            ]\n        },\n        {\n            \"id\": 1161,\n            \"uuid\": \"b43149e8-e4fb-4657-893f-2fc0b79baa3d\",\n            \"name\": \"Barbell Hip Thrust\",\n            \"exercise_base\": 906,\n            \"description\": \"Sit on the ground with a bench behind you, bending your knees so your feet are planted on the ground and holding a barbell resting below your hips. If you have a padded bar, or anything you can slip in between the bar and your body, it will go a long way to making the exercise more comfortable.\",\n            \"creation_date\": \"2022-12-22\",\n            \"category\": 9,\n            \"muscles\": [],\n            \"muscles_secondary\": [],\n            \"equipment\": [],\n            \"language\": 2,\n            \"license\": 2,\n            \"license_author\": \"enros7500\",\n            \"variations\": [],\n            \"author_history\": [\n                \"enros7500\"\n            ]\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

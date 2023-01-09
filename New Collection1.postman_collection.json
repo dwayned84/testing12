@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "e303b1ec-f24c-4d1f-b53e-48e481281006",
+		"name": "New Collection1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24854115"
+	},
+	"item": [
+		{
+			"name": "get",
+			"item": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"var jsonObject = xml2Json(responseBody);",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.count).to.eql(432);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"license\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wger.de/api/v2/exercise/",
+					"protocol": "https",
+					"host": [
+						"wger",
+						"de"
+					],
+					"path": [
+						"api",
+						"v2",
+						"exercise",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
